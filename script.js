@@ -1,0 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
+    mobileMenu.addEventListener('click', function () {
+        navList.classList.toggle('show');
+    });
+
+    // Close the mobile menu when clicking on a link
+    navList.addEventListener('click', function () {
+        navList.classList.remove('show');
+    });
+});

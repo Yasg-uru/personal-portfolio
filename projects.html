@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Yash Choudhary</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* height: 100vh; */
+        overflow-y: auto;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      h1 {
+        color: #00bcd4;
+      }
+
+      .projects-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .project-connector {
+        position: absolute;
+        width: 2px;
+        height: calc(100% - 40px);
+        background-color: black;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .project {
+        background-color: black;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        z-index: 1;
+      }
+
+      .project:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px cyan;
+      }
+
+      .project img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+
+      .project-details {
+        margin-top: 20px;
+        display: none;
+        z-index: 2;
+        position: relative;
+      }
+
+      .details-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: black;
+        border-radius: 10px;
+        box-shadow:  cyan 0px 5px 15px;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Projects</h1>
+      <div class="projects-container" id="projects">
+        <div class="project" onclick="showDetails('ecommerce')">
+          <h2>Multivendor E-Commerce</h2>
+          <img
+            src="Ecommerce-Transparent.png.crdownload"
+            style="height: 20vh"
+            alt="E-Commerce Project"
+          />
+        </div>
+        <div class="project" onclick="showDetails('lecture')">
+          <h2>Lecture Management System</h2>
+          <img
+            src="lms.png"
+            style="height: 20vh"
+            alt="Lecture Management Project"
+          />
+        </div>
+        <div class="project-connector"></div>
+        <div class="project" onclick="showDetails('movie')">
+          <h2>Live Movie Watching System</h2>
+          <img
+            src="live movie watching system.png"
+            style="height: 20vh"
+            alt="Movie Watching Project"
+          />
+        </div>
+        <div class="project-connector"></div>
+        <div class="project" onclick="showDetails('notes')">
+          <h2>Get Notes Website</h2>
+          <img
+            src="getnotes.png"
+            style="height: 20vh"
+            alt="Get Notes Project"
+          />
+        </div>
+      </div>
+      <div class="project-details" id="projectDetails"></div>
+    </div>
+
+    <script>
+      function showDetails(project) {
+        const projectDetails = document.getElementById("projectDetails");
+        projectDetails.innerHTML = "";
+
+        switch (project) {
+          case "ecommerce":
+            projectDetails.innerHTML = `<div class="details-content" >
+
+<h2 style="color: #00bcd4; font-size: 2.5rem; margin-bottom: 20px;">Multivendor E-Commerce</h2>
+
+<p style="color: #fff; font-size: 1.2rem; line-height: 1.5; margin-bottom: 20px;">
+  Embark on an extraordinary shopping odyssey through my Multivendor E-Commerce platform. Immerse yourself in a realm of boundless possibilities, where innovation seamlessly intertwines with convenience. Explore a carefully curated collection of top-tier products sourced from a diverse array of vendors, each contributing a distinctive touch to elevate your shopping journey. Unleash the power of choice, unearth exclusive items, and engage in transactions that redefine seamlessness. Elevate your lifestyle with my Multivendor E-Commerce showcase – where every purchase serves as a profound statement of style and sophistication. Welcome to a world of unparalleled shopping, meticulously tailored just for you.
+</p>
+
+<ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+  <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">User-Friendly Interface</li>
+  <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Vendor Registration</li>
+  <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Product Management</li>
+  <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Order Management</li>
+  <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Secure Transactions</li>
+  <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Review and Rating System</li>
+</ul>
+<a href='https://github.com/Yasg-uru/Ecommerce.git' target='_blank'><button style="padding: 12px 24px; font-size: 1.2rem; color: #fff; background-color: #0DD7E5; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; text-transform: uppercase; letter-spacing: 1px; outline: none;">
+
+Get Code
+
+</button></a>
+
+
+</div>
+`;
+            break;
+          case "lecture":
+            projectDetails.innerHTML =
+              `<div class="details-content">
+  <h2 style="color: #00bcd4; font-size: 2.5rem; margin-bottom: 20px;">Lecture Management System</h2>
+
+  <p style="color: #fff; font-size: 1.2rem; line-height: 1.5; margin-bottom: 20px;">
+    Dive into an immersive learning experience with my Lecture Management System. Empowering students to access a world of knowledge, the platform offers a seamless blend of education and technology. Explore an extensive library of lectures curated from top educators, each designed to elevate your understanding. Subscribe to personalized plans, manage your lectures effortlessly, and embark on a learning journey that transcends boundaries. Elevate your education with the Lecture Management System – where knowledge meets convenience.
+  </p>
+
+  <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">User-Friendly Interface</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Subscription Plans</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Lecture Access Management</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Seamless Learning Experience</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Interactive Subscriptions</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Progress Tracking</li>
+  </ul>
+  <a href='https://github.com/Yasg-uru/Lecture-managment-system.git' target='_blank'>
+    <button style="padding: 12px 24px; font-size: 1.2rem; color: #fff; background-color: #0DD7E5; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; text-transform: uppercase; letter-spacing: 1px; outline: none;">
+      Get Code
+    </button>
+  </a>
+</div>
+`
+            break;
+          case "movie":
+            projectDetails.innerHTML =
+              `<div class="details-content">
+  <h2 style="color: #00bcd4; font-size: 2.5rem; margin-bottom: 20px;">Live Movie Watching System</h2>
+
+  <p style="color: #fff; font-size: 1.2rem; line-height: 1.5; margin-bottom: 20px;">
+    Immerse yourself in the cinematic experience with my Live Movie Watching System. This innovative platform allows users to create virtual movie rooms, bringing friends together from any corner of the world. Seamlessly connect through Socket.io for real-time interactions, including group chat and movie reviews. Enjoy secure authentication features, ensuring a private and enjoyable movie-watching environment. Elevate your movie nights with the Live Movie Watching System – where entertainment knows no boundaries.
+  </p>
+
+  <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Virtual Movie Rooms</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Socket.io Integration</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Real-time Group Chat</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Movie Reviews and Ratings</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Secure Authentication</li>
+  </ul>
+  <a href='https://github.com/Yasg-uru/live-movie-system.git' target='_blank'>
+    <button style="padding: 12px 24px; font-size: 1.2rem; color: #fff; background-color: #0DD7E5; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; text-transform: uppercase; letter-spacing: 1px; outline: none;">
+      Get Code
+    </button>
+  </a>
+</div>
+`
+            break;
+          case "notes":
+            projectDetails.innerHTML =
+              `<div class="details-content">
+  <h2 style="color: #00bcd4; font-size: 2.5rem; margin-bottom: 20px;">Get Notes Website</h2>
+
+  <p style="color: #fff; font-size: 1.2rem; line-height: 1.5; margin-bottom: 20px;">
+    Explore the world of knowledge with my Get Notes Website. Admins can effortlessly create and organize a repository of valuable resources, while students gain access to a treasure trove of educational materials. The platform ensures secure authentication, providing a trustworthy environment for learning. Enjoy a seamless experience with additional features like categorization, search functionality, and more. Elevate your academic journey with the Get Notes Website – where learning meets innovation.
+  </p>
+
+  <ul style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Admin Note Creation</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Student Access</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Secure Authentication</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Categorization</li>
+    <li style="background-color: #00bcd4; color: #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Search Functionality</li>
+  </ul>
+  <a href='https://github.com/Yasg-uru/getnotes-project.git' target='_blank'>
+    <button style="padding: 12px 24px; font-size: 1.2rem; color: #fff; background-color: #0DD7E5; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; text-transform: uppercase; letter-spacing: 1px; outline: none;">
+      Get Code
+    </button>
+  </a>
+</div>
+`
+            break;
+        }
+
+        projectDetails.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
